@@ -1,0 +1,18 @@
+<h1>DRAGON BALL Z</h1>
+<hr>
+<div class="row">
+
+  <div class="col">
+<!-- voy a recibir el evento, y lo conecto mainpage-->
+
+    <!--Aplicando @Input() en el componente hijo y aplicando "[characterList]="characters" puedes transmitir informacion del padre al hijo-->
+    <app-dbz-list [characterList]="character" (DeletedId)="onDeleteCharacter($event)"></app-dbz-list>
+  </div>
+
+  <div class="col">
+    <!--  cuando queremos mandar del padre a hijo con inputs utilizamos "[]" o queremos asignar un atributo
+          mientras que utilizamos "()" para escuchar eventos   -->
+    <app-add-character (onNewCharacter)="onNewCharacter($event)" ></app-add-character>
+
+  </div>
+</div>
